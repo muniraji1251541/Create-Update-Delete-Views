@@ -1,0 +1,10 @@
+{% extends 'app/dummy.html' %} {% block title %}
+<title>Delete</title>
+{% endblock %} {% block body_block %}
+<h1>Are You Sure To Delete {{sc.name}}</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes-Delete" class="btn btn-outline-danger">
+</form>
+<br>
+<a href="{% url 'list' %}" class="btn btn-outline-success">No-GoBack</a> {% endblock %}
